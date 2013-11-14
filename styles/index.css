@@ -1,0 +1,7 @@
+@import "../vendor/prism/prism.css";
+
+/* Hide off-screen slides. */
+body { overflow: hidden; }
+
+/* Disable transitions until after page load. */
+.preload slide-item { -webkit-transition: none !important; }

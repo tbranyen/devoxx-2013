@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Devoxx Backbone</title>
+
+  <script type="text/javascript" src="//use.typekit.net/fej0czv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body class="preload tk-museo">
+  <!-- This iterates over all slides and injects them into `index.html` -->
+  
+    <slide-item id="1">
+      <h1>Backbone Development</h1>
+<h2>Devoxx 2013</h2>
+<div class="background"><img src="/images/intro.png"></div>
+
+<script type="speaker-notes">
+~ 10 seconds.
+
+- Welcome and thank you for attending.
+- This is a talk on Backbone and tooling to improve frontend web development.
+</script>
+
+<style scoped>
+  @host {
+    overflow: hidden;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border: 0 !important;
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: 42px;
+    color: #FFF;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 26px;
+    color: #000;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #1</slide-index>
+  
+    <slide-item id="2">
+      <div class="background"><img src="/images/me.png"></div>
+
+<ul>
+<li>Tim Branyen (@tbranyen)</li>
+<li><strong>Open Source Developer</strong> at <strong>Bocoup</strong> in <strong>Boston</strong></li>
+<li>Backbone Boilerplate &amp; Backbone LayoutManager</li>
+<li>Co-author of Backbone In Action</li>
+</ul>
+<script type="speaker-notes">
+~ 1 minute
+
+- @tbranyen online alias (GitHub, Twitter).
+- Currently working on improving teaching and learning the open web stack.
+- Been contributing to and promoting Backbone for the past two years.
+- Backbone Boilerplate & Backbone LayoutManager (two popular projects).
+- Co-author of Backbone in Action.
+</script>
+
+<style scoped>
+  @host {
+    overflow: hidden;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border: 0 !important;
+  }
+
+  ul {
+    list-style: none;
+    position: absolute;
+    z-index: 100;
+    color: #FFF;
+    text-align: right;
+
+    right: 50px;
+    bottom: 50px;
+  }
+
+  li {
+    font-size: 140%;
+    line-height: 30px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #2</slide-index>
+  
+    <slide-item id="3">
+      <h1>How to Build Web Applications</h1>
+<script type="speaker-notes">
+~ 25 seconds.
+
+- One hour to teach you everything I know.
+- Discuss techniques for building modern web applications.
+
+- Show simple ways of developing, as the best way is usually simple.
+
+- No live coding, I will show high level and then dig into the actual source.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #28723A;
+    color: #C4C182;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #3</slide-index>
+  
+    <slide-item id="4">
+      <p><img src="/images/site-app.png"></p>
+<script type="speaker-notes">
+~ 1 minute
+
+- Not a debate about server or client side.
+  - They are both necessary and not mutually exclusive.
+
+- What are you creating?
+  - Is this about content or functionality?
+  - Are your end users on very low bandwidth (mobile)?
+  - Are they using unknown devices?
+  - Is SEO vital to it's success?
+
+- PE is about layering and enhancement, not about JS being on or off.
+</script>
+
+<style scoped>
+  @host {
+    background: #C4C182 !important;
+  }
+
+  img {
+    border: none !important;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #4</slide-index>
+  
+    <slide-item id="5">
+      <h1>Client Side Applications</h1>
+<div class="browser"><img src="/images/clientside.png"></div>
+
+<script type="speaker-notes">
+~ 1 minute
+
+- Focus entirely on client side applications, meaning no server rendering.
+
+- Java conference full of developers with server-side fu...
+
+- In my opinion, some of the best tools for the job.
+- Server is entirely optional (very portable).
+  - Phonegap, Chrome Apps, etc.
+- Some APIs are only accessible on the client side.
+  - WebRTC
+  - WebGL
+- Very fast, with low latency routing.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #222;
+  }
+
+  img {
+    border: none;
+  }
+
+  .browser {
+    zoom: 0;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    margin-left: -421px;
+    margin-top: -213px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #5</slide-index>
+  
+    <slide-item id="6">
+      <p><img src="/images/tweetdeck.png"></p>
+<script type="speaker-notes">
+~ 30 seconds
+
+- Open TweetDeck to see what it really looks like.
+
+- My favorite web application.
+- Does not do well without JavaScript.
+  - Which is fine considering the audience.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+    overflow: hidden;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #6</slide-index>
+  
+    <slide-item id="7">
+      <p><img src="/images/twitter.png"></p>
+<script type="speaker-notes">
+~ 30 seconds
+
+- Open Twitter.com.
+
+- Almost never use the website.
+  - Except for when I'm remote.
+
+- Good for SEO, accessibility, and initial load performance.
+  - Many intelligent designs could alleviate issues with loading.
+    - Bootstrapping data.
+    - Lazy loading JavaScript that isn't used immediately.
+    - Caching, Minification, and static GZip.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #7</slide-index>
+  
+    <slide-item id="8">
+      <p><img src="/images/javascript.png"></p>
+<script type="speaker-notes">
+~ 30 seconds
+
+- Talk heavy on JavaScript.
+- JavaScript is the open web programming language.
+- At the moment it's not ideal for building large applications.
+- BUT, we have had tools for a long time to fix it.
+- AND, ES6 (the next version) is right around the corner, you can start using
+  some of it's featureset today with transpilers.
+</script>
+
+<style scoped>
+  @host {
+    background: #F0DB4F;
+    text-align: center;
+  }
+
+  img {
+    border: none;
+    width: 50%;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #8</slide-index>
+  
+    <slide-item id="9">
+      <h1>Lets look at what Backbone gives, and doesn&#39;t give, you.</h1>
+<style scoped>
+  @host {
+    background: #FFDA79;
+    color: #333;
+  }
+</style>
+
+<script type="speaker-notes">
+~ 30 seconds
+
+- Not the end all framework.
+  - There may be a better tool for your needs.
+
+- Not the "next" jQuery.
+  - Not part of the "grab" bag.
+  - Will decide how you fundamental architect.
+
+- Very lightweight and flexible.
+- Popularized a declarative model for structuring code.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #9</slide-index>
+  
+    <slide-item id="10">
+      <p>Backbone.js is an MVC library that assists with organization and structure
+of modern web applications.</p>
+<div>It has the following dependencies:</div>
+
+<ul>
+<li><a href="http://underscorejs.org">Underscore</a> or <a href="http://lodash.com">Lo-Dash</a></li>
+<li><a href="http://jquery.com">jQuery</a> or <a href="http://zeptojs.com">Zepto</a></li>
+</ul>
+<div>Documentation and project information:</div>
+
+<p><a href="http://backbonejs.org"><a href="http://backbonejs.org">http://backbonejs.org</a></a></p>
+<div>Source Code on GitHub:</div>
+
+<p><a href="http://github.com/jashkenas/backbone"><a href="http://github.com/jashkenas/backbone">http://github.com/jashkenas/backbone</a></a></p>
+<script type="speaker-notes">
+~ 1 minute
+
+- Single JavaScript file.
+
+- Relys on a functional utility belt.
+  - For map, reduce, each, etc.
+
+- Relys on a dom library
+  - For DOM querying and AJAX
+
+- Backbone repository uses tags to denote stable versions.
+  - Master is unstable!
+
+- Hosted on Jeremy Ashkenas's profile, primary author.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFFFFF;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  div {
+    background: #000;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #10</slide-index>
+  
+    <slide-item id="11">
+      <p>Designed around events - Almost all built in constructs emit events about their state. </p>
+<p>Events are a powerful way to reduce coupling.</p>
+<pre><code class="lang-javascript">// Is a mixin.
+var myObj = _.extend({}, Backbone.Events);
+
+// Wait for the event `something` to be triggered.
+myObj.on(&quot;something&quot;, function(data) {
+  console.log(data);
+});
+
+// Trigger the event from anywhere, passing a String.
+myObj.trigger(&quot;something&quot;, &quot;with some data!&quot;);</code></pre>
+<script type="speaker-notes">
+~ 1 minute.
+
+- Very useful design feature are that events are prolific.
+
+- Backbone.Events is a mixin that can be added to any object.
+
+- Contains `on`, `off`, `listenTo`, `stopListening` `once` and `listenToOnce`.
+
+- Greatly reduce coupling, objects do not need to know about eachother.
+  - Events stack.
+
+- Documentation contains all emitted events.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #11</slide-index>
+  
+    <slide-item id="12">
+      <p>Backbone has inheritance that works, but it leaves much to be desired.</p>
+<pre><code class="lang-javascript">var ModelDefinition = Backbone.Model.extend({
+  // Instance properties go here, shared on all instances.
+}, {
+  // Class properties go here, only available on `ModelDefinition`.
+});
+
+// Create an instance of the ModelDefinition.
+var modelInstance = new ModelDefinition();</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+
+<script type="speaker-notes">
+~ 45 seconds
+
+- All Backbone constructs are extended and initialized the same way.
+- TitleCase the constructs.
+- camelCase the instances.
+
+- Declarative approach.
+
+- Implementation is not exposed.
+
+- `initialize` is a special method which is called automatically.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #12</slide-index>
+  
+    <slide-item id="13">
+      <p>For instance, there is no clean way to create a custom construct.</p>
+<pre><code class="lang-javascript">function CustomConstruct() {
+  // Initialization code here.
+}
+
+// Instance properties
+_.extend(CustomConstruct.prototype, {
+  someMethod: function() {}
+});
+
+// Awkward tacking this on.
+CustomConstruct.extend = Backbone.Model.extend;</code></pre>
+<script type="speaker-notes">
+~ 40 seconds
+
+- Does not look very Backbone like.
+- May not always work as it's undocumented.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #13</slide-index>
+  
+    <slide-item id="14">
+      <h3>Routers and History</h3>
+<pre><code class="lang-javascript">var ApplicationRouter = Backbone.Router.extend({
+  routes: {
+    // Mapping identifiers to methods goes here.
+  },
+
+  // Route methods here.
+});
+
+// Initialize the Router.
+var applicationRouter = new ApplicationRouter();
+
+// Tell Backbone to start monitoring the changes in browser history.
+Backbone.history.start();</code></pre>
+<ul>
+<li>Multiple routers can be used so long as the route paths are unique.</li>
+<li>Duplicate route identifiers will override the previously defined routes.</li>
+</ul>
+<script type="speaker-notes">
+~ 1 minute
+
+- Very important way to track state within the application.
+
+- The router is designed to take key:val in the routes object.
+  - These correspond to an identifier and a method name.
+
+- Methods are defined on the construct prototype.
+
+- You must initialize with at least one route.
+- Duplicates are not recommended as the last one will override.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #14</slide-index>
+  
+    <slide-item id="15">
+      <h3>Default behavior is to use location.hash fragments.</h3>
+<pre><code class="lang-javascript">http://localhost/#my-route-identifier</code></pre>
+<script type="speaker-notes">
+~ 1 minute
+
+Pros:
+
+- Allows you to track state without refreshing the page.
+- Do not require a configured web server to use.
+
+Cons:
+
+- These cannot be read by a web server. (No preloading)
+- Unable to be parsed by search engines.
+- Are abuse of the technology.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #15</slide-index>
+  
+    <slide-item id="16">
+      <h3>HTML5 History API (commonly known as <code>pushState</code>) can be enabled with:</h3>
+<pre><code class="lang-javascript">Backbone.history.start({ pushState: true });</code></pre>
+<p>Turns your urls into:</p>
+<pre><code class="lang-javascript">http://localhost/my-route-identifier</code></pre>
+<script type="speaker-notes">
+~ 1 minute
+
+Pros:
+
+- The preferred way to handle client side routing.
+- Can be read by web servers.
+
+Cons:
+
+- Web server must be set up to handle requests,
+  otherwise refreshing will be a 404.
+</script>
+
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #16</slide-index>
+  
+    <slide-item id="17">
+      <h3>Views</h3>
+<pre><code class="lang-javascript">var SomeView = Backbone.View.extend({
+  el: &lt;element to attach to here&gt;
+
+  events: {
+    // DOM Events added here.
+  }
+});
+
+// Initialize the View.
+var someView = new SomeView();</code></pre>
+<ul>
+<li>Views can get super complex, look into a plugin to assist with large apps.</li>
+<li>No data binding out of the box (or even a usable <code>render</code> method).</li>
+</ul>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #17</slide-index>
+  
+    <slide-item id="18">
+      <h3>Models and Collections</h3>
+<pre><code class="lang-javascript">var Item = Backbone.Model.extend({
+  // Point to an external REST resource to sync with.
+  url: &quot;&quot;
+});
+
+var ItemCollection = Backbone.Collection.extend({
+  model: Item
+});
+
+// Initialize the Model.
+var item = new Item();
+
+// Add a new property.
+item.set(&quot;newProp&quot;, &quot;someValue&quot;);</code></pre>
+<ul>
+<li>Both Model and Collection proxy functional methods from underscore.</li>
+</ul>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #18</slide-index>
+  
+    <slide-item id="19">
+      <h3>A typical workflow.</h3>
+<ul>
+<li>Create initial page markup.</li>
+<li>Define an application namespace to attach constructs from.</li>
+<li>Define Routers/Views/Models/etc.</li>
+<li>Once all code has loaded and all constructs are defined, start the app.</li>
+<li>The Router determines what to show.</li>
+<li>Views hook into the DOM and provide the necessary bridge.</li>
+<li>Models store data.</li>
+<li>Lots of glue to hold it together.</li>
+</ul>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h3 {
+    color: #333;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+
+  li {
+    line-height: 35px;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #19</slide-index>
+  
+    <slide-item id="20">
+      <p>Walk through building a small application that tells you about the weather.</p>
+<script type="speaker-notes">
+- Start with a very basic implementation.
+- Look at what can be improved.
+- And then we will refactor to use better tooling.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #20</slide-index>
+  
+    <slide-item id="21">
+      <p><img src="/images/mockup_first.png"><img src="/images/mockup_second.png"></p>
+
+    </slide-item>
+
+    <slide-index>Slide #21</slide-index>
+  
+    <slide-item id="22">
+      <h3>Initial page markup</h3>
+<pre><code class="lang-markup">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;title&gt;WeatherProof&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;background&quot;&gt;&lt;img src=&quot;images/background.jpg&quot;&gt;&lt;/div&gt;
+
+  &lt;h1&gt;Weather&lt;span class=&quot;proof&quot;&gt;prooF&lt;/span&gt;&lt;/h1&gt;
+
+  &lt;form&gt;
+    &lt;img class=&quot;detect&quot; src=&quot;images/geolocation.png&quot;&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Find location.&quot;&gt;
+  &lt;/form&gt;
+
+  &lt;div class=&quot;weather&quot;&gt;&lt;/div&gt;
+
+  &lt;footer&gt;
+    Powered by: &lt;a href=&quot;http://openweathermap.org/&quot;&gt;OpenWeatherMap&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #22</slide-index>
+  
+    <slide-item id="23">
+      <h4>Backbone dependencies</h4>
+<pre><code class="lang-markup">&lt;script src=&quot;underscore.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code></pre>
+<h4>Backbone</h4>
+<pre><code class="lang-markup">&lt;script src=&quot;backbone.js&quot;&gt;&lt;/script&gt;</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h4 {
+    padding-bottom: 4px;
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+</style>
+
+<script type="speaker-notes">
+- Backbone doesn't come with any UI style guide or recommendation.
+- You can swap out Underscore for LoDash's underscore compatibility build.
+- jQuery can be swapped out for Zepto (jQuery alternative) YMMV.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #23</slide-index>
+  
+    <slide-item id="24">
+      <h4>Pure framework</h4>
+<p>Alternative to Bootstrap/Foundation for Grids, Typography, Tables, etc.</p>
+<pre><code class="lang-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;pure.css&quot;&gt;</code></pre>
+<p><a href="http://purecss.io/">http://purecss.io/</a></p>
+<script type="speaker-notes">
+- We will use pure for styling the form and weather data in our application.
+
+- This will also normalize the default browser styles.
+</script>
+
+<style scoped>
+  a { color: #333; text-decoration: none; }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #24</slide-index>
+  
+    <slide-item id="25">
+      <h3>Create a reusable template with variable data.</h3>
+<pre><code class="lang-markup">&lt;script id=&quot;weather-template&quot; type=&quot;text/template&quot;&gt;
+  &lt;h4 class=&quot;forecast&quot;&gt;
+    &lt;%= model.get(&quot;weather&quot;)[0].description %&gt;
+  &lt;/h4&gt;
+
+  &lt;hr&gt;
+
+  &lt;div class=&quot;region&quot;&gt;
+    &lt;table class=&quot;pure-table pure-table-horizontal&quot;&gt;
+      &lt;tbody&gt;
+
+
+  ...
+&lt;/script&gt;</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #25</slide-index>
+  
+    <slide-item id="26">
+      <h3>Defining application namespace.</h3>
+<p>Useful for storing application specific constants and attaching modules to a
+global namespace.</p>
+
+<pre><code class="lang-javascript">var app = {
+  // Where application is located in the DOM.
+  mainElement: $(&quot;body&quot;),
+
+  // Store reference to API.
+  api: &quot;http://api.openweathermap.org/data/2.5/&quot;
+};</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h3 {
+    color: #333;
+  }
+
+  pre {
+    min-width: 100%;
+  }
+
+  pre code {
+    line-height: 23px;
+  }
+</style>
+
+<script type="speaker-notes">
+
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #26</slide-index>
+  
+    <slide-item id="27">
+      <h3>Starting the application.</h3>
+<pre><code class="lang-javascript">// This is triggered in the HTML once all the source code loads.
+app.start = function() {
+  // Store reference to Router.
+  app.router = new Router();
+
+  // Kick off the Backbone route handling.
+  Backbone.history.start();
+};</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h3 {
+    color: #333;
+  }
+
+  pre {
+    min-width: 100%;
+  }
+
+  pre code {
+    line-height: 23px;
+  }
+</style>
+
+<script type="speaker-notes">
+- Very useful for loading individual modules without starting the application.
+  - If you start the application you may have side effects that influence
+    modules, which isn't very good for testing with a clean slate.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #27</slide-index>
+  
+    <slide-item id="28">
+      <h3>Defining a Router.</h3>
+<pre><code class="lang-javascript">var Router = Backbone.Router.extend({
+  routes: {
+    &quot;&quot;: &quot;home&quot;,
+    &quot;weather/:city&quot;: &quot;showWeather&quot;,
+    &quot;weather/:lat/:lng&quot;: &quot;showWeatherByLatLng&quot;
+  },
+
+  // Useful for setting up models and collections shared throughout the
+  // application.
+  initialize: function() {},
+
+  // Called when `/` is hit.
+  home: function() {},
+
+  // Called when `/weather/someCityName` is hit.
+  showWeather: function(city) {},
+
+  // Called when `/weather/someLat/someLong` is hit.
+  showWeatherByLatLng: function(lat, lng) {}
+});</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h3 {
+    color: #333;
+  }
+
+  pre {
+    min-width: 100%;
+  }
+
+  pre code {
+    line-height: 23px;
+  }
+</style>
+
+<script type="speaker-notes">
+- Very useful for loading individual modules without starting the application.
+  - If you start the application you may have side effects that influence
+    modules, which isn't very good for testing with a clean slate.
+
+- With large applications you may want many routers to isolate concerns.
+</script>
+
+    </slide-item>
+
+    <slide-index>Slide #28</slide-index>
+  
+    <slide-item id="29">
+      <h3>Define a model to store the weather.</h3>
+<pre><code class="lang-javascript">var WeatherModel = Backbone.Model.extend({
+  url: function() {},
+
+  parse: function(resp) {}
+});</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #29</slide-index>
+  
+    <slide-item id="30">
+      <h4>WeatherView</h4>
+<pre><code class="lang-javascript">// The easy one.
+var WeatherView = Backbone.View.extend({
+  initialize: function() {},
+
+  render: function() {},
+
+  renderFailure: function() {}
+});</code></pre>
+<h4>FormView</h4>
+<pre><code class="lang-javascript">var FormView = Backbone.View.extend({
+  el: &quot;.pure-form&quot;,
+
+  events: {},
+
+  changeWeather: function(ev) {},
+  showWeather: function(ev) {},
+  autoDetect: function(ev) {},
+
+  initialize: function() {}
+});</code></pre>
+<style scoped>
+  @host {
+    background: #FFF;
+  }
+
+  h4 {
+    padding-bottom: 4px;
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #30</slide-index>
+  
+    <slide-item id="31">
+      <p>We have a fully functional web application, but how can it be improved?</p>
+<script type="speaker-notes">
+- By using Open source software designed to make the tasks easier.
+
+- More consistent and less custom workflow.
+  - Don't NIH.
+  - Easier to on board new developers.
+</script>
+
+<style scoped>
+  @host {
+    background: #000;
+    color: #FFF;
+  }
+
+  h4 {
+    padding-bottom: 4px;
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #31</slide-index>
+  
+    <slide-item id="32">
+      <p><img src="/images/nodejs.png"></p>
+<p><a href="http://nodejs.org/">http://nodejs.org/</a></p>
+<script type="speaker-notes">
+- Required by all tools mentioned in this talk.
+
+- Client side developers choice, as it's JavaScript.
+
+- Very simple installation.
+
+- Is bundled with NPM the package manager.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #46483E;
+    color: #FFF;
+  }
+
+  img {
+    border: none;
+  }
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #32</slide-index>
+  
+    <slide-item id="33">
+      <h1>Managing Vendor Dependencies</h1>
+<p>In our application we have manually included libraries at arbitrary versions.</p>
+<p>There is no version locking in place or knowledge of
+which versions work.</p>
+<script type="speaker-notes">
+- If we upgrade dependencies, do we know they will still work together?
+
+- Where did they come from? Official sources?
+</script>
+
+<style scoped>
+  @host {
+    background-color: #A3F4FF;
+    color: #6B5F23;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #33</slide-index>
+  
+    <slide-item id="34">
+      <p><img src="/images/bower-logo.png"></p>
+<script type="speaker-notes">
+- Bower by Twitter, Google, and the community.
+
+- Pulls directly from repositories.
+
+- Handles versioning and resolution.
+
+- Has the libraries you want to use.
+</script>
+
+<style scoped>
+  @host {
+    overflow: hidden;
+    background-color: #A3F4FF;
+    color: #6B5F23;
+  }
+
+  img {
+    border: none;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #34</slide-index>
+  
+    <slide-item id="35">
+      <h3>Configuring Bower</h3>
+<pre><code class="lang-javascript">{
+  &quot;name&quot;: &quot;app.toweatherproof.me&quot;,
+
+  &quot;dependencies&quot;: {
+    &quot;pure&quot;: &quot;~0.3.0&quot;,
+    &quot;almond&quot;: &quot;~0.2.6&quot;,
+    &quot;lodash&quot;: &quot;~2.2.1&quot;,
+    &quot;backbone&quot;: &quot;~1.1.0&quot;,
+    &quot;jquery&quot;: &quot;~2.0.3&quot;,
+    &quot;requirejs&quot;: &quot;~2.1.9&quot;,
+    &quot;lodash-template-loader&quot;: &quot;~0.1.3&quot;
+  }
+}</code></pre>
+<pre><code class="lang-bash">npm install -g bower
+bower install</code></pre>
+<script type="speaker-notes">
+- bower.json in the root.
+- Specify the packages and versions.
+- Follows semver.
+
+- Install with NPM.
+- Once configured, run bower install to
+fetch.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #A3F4FF;
+    color: #6B5F23;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #35</slide-index>
+  
+    <slide-item id="36">
+      <h1>Modules</h1>
+<p>Our code works when the files are included in the correct order, but what happens when it comes time to optimize?</p>
+<script type="speaker-notes">
+- Our scripts do not know what their dependencies are.
+
+- JavaScript does not yet have support for native modules.
+
+- There are many competing formats.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFD3A3;
+    color: #611F1F;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #36</slide-index>
+  
+    <slide-item id="37">
+      <h1>Resource Loading</h1>
+<p>Our template is inlined into the markup which causes broken syntax
+highlighting.  What happens when we have dozens of templates?</p>
+<script type="speaker-notes">
+- Maintenance nightmare.
+- How should we intelligently load templates?
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFD3A3;
+    color: #611F1F;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #37</slide-index>
+  
+    <slide-item id="38">
+      <p><img src="/images/requirejs.png"></p>
+<p><a href="http://requirejs.org/">http://requirejs.org/</a></p>
+<script type="speaker-notes">
+Pros:
+
+- RequireJS uses the AMD module format.
+- Works with or without a server.
+- Has plugin support for loading templates.
+- Manages a dependency graph of your modules.
+- Handles the optimization of concatenating your code, minifying, and generating source maps.
+
+Cons:
+
+- Very complicated to configure and debug.
+
+So why are we using it? Because once it's properly
+configured, it's insanely easy to use.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFD3A3;
+    color: #611F1F;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #38</slide-index>
+  
+    <slide-item id="39">
+      <h3>Configuring RequireJS</h3>
+<pre><code class="lang-javascript">require.config({
+  paths: {
+    &quot;vendor&quot;: &quot;../vendor&quot;,
+    &quot;almond&quot;: &quot;../vendor/bower/almond/almond&quot;,
+    &quot;underscore&quot;: &quot;../vendor/bower/lodash/dist/lodash.underscore&quot;,
+    &quot;lodash&quot;: &quot;../vendor/bower/lodash/dist/lodash&quot;,
+    &quot;jquery&quot;: &quot;../vendor/bower/jquery/jquery&quot;,
+    &quot;backbone&quot;: &quot;../vendor/bower/backbone/backbone&quot;,
+    &quot;ldsh&quot;: &quot;../vendor/bower/lodash-template-loader/loader&quot;
+  },
+
+  shim: {
+    &quot;backbone&quot;: {
+      deps: [&quot;jquery&quot;, &quot;underscore&quot;],
+      exports: &quot;Backbone&quot;
+    }
+  }
+});</code></pre>
+<script type="speaker-notes">
+- app/config.js
+
+- Need to manually specify the path to each dependency.
+
+- Shimming is required for libraries that are not AMD compatible.
+
+- More and more libraries are becoming AMD compliant.
+  - The next version of Backbone will include AMD support.
+
+- This configuration is only part of it.
+- Still need to configure optimizer and runtime.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFD3A3;
+    color: #611F1F;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #39</slide-index>
+  
+    <slide-item id="40">
+      <h1>Testing</h1>
+<p>So our application works fine from what we can tell, but what is our testing strategy?</p>
+<script type="speaker-notes">
+- Do we even know how to test this?
+
+- Are our modules defined in a way that makes them
+easy to test?
+
+- Will our testing support continuous integration?
+
+- Are we hitting all lines of code we wrote?
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFF;
+    color: #333;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #40</slide-index>
+  
+    <slide-item id="41">
+      <p><img src="/images/karma.png"></p>
+<script type="speaker-notes">
+- Karma is built by Google's Angular team.
+
+- The best solution for testing.
+
+- Still a little buggy.
+
+- Very pluginable.
+
+- Code coverage, saucelabs, browser launching, CI via phantomjs.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #FFF;
+    color: #333;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #41</slide-index>
+  
+    <slide-item id="42">
+      <h1>Managing your project</h1>
+<p>How do you optimize your code? How do you apply continuous integration?  Do you lint?</p>
+<script type="speaker-notes">
+- These are real problems that developers often code their own solution to.
+
+- Wouldn't it be nice if someone already did this and published their code?
+
+- Reuse existing tasks that do the exact-thing you want to accomplish.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #E48632;
+    color: #FFF;
+  }
+</style>
+
+
+
+    </slide-item>
+
+    <slide-index>Slide #42</slide-index>
+  
+    <slide-item id="43">
+      <p><img src="/images/grunt-logo.png"></p>
+<p><a href="http://gruntjs.com/">http://gruntjs.com/</a></p>
+<script type="speaker-notes">
+- Hundreds of plugins to pick from.
+</script>
+
+<style scoped>
+  @host {
+    background-color: #E48632;
+    color: #FFF;
+  }
+
+  img {
+    border: none;
+  }
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #43</slide-index>
+  
+    <slide-item id="44">
+      <h3>Configuring Grunt</h3>
+<pre><code class="lang-javascript">module.exports = function(grunt) {
+  grunt.initConfig({
+    // Task options go here.
+  });
+
+  // Load tasks installed from NPM.
+  grunt.loadNpmTasks(&quot;grunt-some-plugin&quot;);
+
+  // Required default task.
+  grunt.registerTask(&quot;default&quot;, [&quot;list&quot;, &quot;of&quot;, &quot;tasks&quot;]);
+};</code></pre>
+<pre><code class="lang-bash">npm install -g grunt-cli
+npm install grunt
+grunt</code></pre>
+<script type="speaker-notes">
+- Create a Gruntfile.js in the root.
+
+</script>
+
+<style scoped>
+  @host {
+    background-color: #E48632;
+    color: #FFF;
+  }
+</style>
+
+
+    </slide-item>
+
+    <slide-index>Slide #44</slide-index>
+  
+    <slide-item id="45">
+      <h1>All This Work!</h1>
+<p>After talking about all this configuration and projects to
+remember, it gets to be a lot of work.  Prone to failure if
+everything isn&#39;t properly configured.</p>
+<script type="speaker-notes">
+- Can you figure out why your RequirejS optimized build isn't working?
+
+- Can you get RequireJS to work with Karma?
+
+- Can you get Karma to work with Grunt?
+</script>
+
+<style scoped>
+  @host {
+    background-color: #3272E4;
+    color: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #45</slide-index>
+  
+    <slide-item id="46">
+      <p><img src="/images/backbone-boilerplate.png"></p>
+<style scoped>
+  @host {
+    background-color: #3272E4;
+    color: #FFF;
+  }
+</style>
+
+    </slide-item>
+
+    <slide-index>Slide #46</slide-index>
+  
+
+  <!-- Third-party. -->
+  <script src="vendor/scopedcss.js"></script>
+  <script src="vendor/jquery.js"></script>
+  <script src="vendor/underscore.js"></script>
+  <script src="vendor/backbone.js"></script>
+  <script src="vendor/backbone.layoutmanager.js"></script>
+  <script src="vendor/backbone.component.js"></script>
+  <script src="vendor/prism/prism.js"></script>
+
+  <!-- Load the slide item component. -->
+  <script src="components/slide-item/script.js"></script>
+  <script src="source/load.js"></script>
+
+  <!-- Livereload is useful for development. -->
+  <script src="http://127.0.0.1:35729/livereload.js"></script>
+</body>
+</html>
